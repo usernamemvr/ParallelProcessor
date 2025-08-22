@@ -1,0 +1,7 @@
+id,name,category,quantitySold,price
+1,Mouse,Electronics,200,599.0
+2,Keyboard,Electronics,150,999.0
+3,T-Shirt,Clothing,300,499.0
+4,Jeans,Clothing,180,999.0
+5,Book,Stationery,90,199.0
+6,Pen,Stationery,290,199.0

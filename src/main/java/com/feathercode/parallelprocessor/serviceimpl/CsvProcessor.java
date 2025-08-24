@@ -16,15 +16,13 @@ import java.util.concurrent.Future;
 @Service
 public class CsvProcessor implements DataProcessor {
 
-    private static final int BATCH_SIZE = 500;
+    private static final int BATCH_SIZE = 10000;
     @Override
     public List<Product> readProducts(String path) {
         ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
         List<Product> products = new ArrayList<>();
-        try {
-            BufferedReader bf = new BufferedReader(new FileReader(path));
-            bf.readLine(); // to skip the header
+        try(BufferedReader bf = new BufferedReader(new FileReader(path), 1_048_576)) {
+            bf.readLine();
             List<String> batch = new ArrayList<>();
             List<Future<List<Product>>> futures = new ArrayList<>();
             String line;

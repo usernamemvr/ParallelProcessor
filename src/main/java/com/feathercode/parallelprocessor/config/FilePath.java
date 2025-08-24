@@ -1,7 +1,7 @@
 package com.feathercode.parallelprocessor.config;
 
 public enum FilePath {
-    CSV_INPUT("src/main/resources/csv/data.csv"),
+    CSV_INPUT("src/main/resources/csv/MOCK_DATA_huge.csv"),
     CSV_OUTPUT("src/main/resources/csv/summary.csv");
 
     private final String path;
